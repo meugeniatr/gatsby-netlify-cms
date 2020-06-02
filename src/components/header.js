@@ -1,5 +1,4 @@
 import React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 
 import MenuIcon from '@material-ui/icons/Menu'
@@ -17,29 +16,54 @@ import {
   Toolbar,
   makeStyles,
   useTheme,
+  Container,
   Grid,
 } from '@material-ui/core'
+import { Image } from '../elements'
+import TestweWhite from '../images/Logos/TestweWhite.svg'
+import { LoginIcon } from '../elements/SVGS'
+import ExitToAppIcon from '@material-ui/icons/ExitToApp'
 
 const MyLink = styled(Link)`
   color: white;
   text-decoration: none;
   margin-right: 2rem;
-  border: 2px solid ${props => (props.demo ? '#e64663' : 'transparent')};
-  border-radius: 30px;
-  padding: ${props => (props.demo ? '0px 15px 0px 15px' : '0px')};
+  border: 2px solid ${props => (props.demo ? '#ffffff' : 'transparent')};
+  border-radius: 10px;
+  padding: ${props => (props.demo ? '3px' : '0px')};
   cursor: pointer;
-  transition: all 20ms ease-in;
+  position: relative;
+
+  ::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #ffffff;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out 0s;
+  }
+
+  :hover::before {
+    ${props =>
+      !props.demo
+        ? 'visibility: visible; transform: scaleX(1);'
+        : 'background-color:"#ffffff"; color:"#e64663"; '};
+  }
   :hover {
-    color: ${props => (props.demo ? 'white' : 'black')};
-    background-color: ${props => (props.demo ? '#e64663' : 'transparent')};
+    color: ${props => (props.demo ? '#e64663' : 'white')};
+    background-color: ${props => (props.demo ? '#ffffff' : 'transparent')};
   }
 `
 const NavTypography = styled(Typography)`
   font-weight: 500;
 `
 const useStyles = makeStyles(theme => ({
-  root: {
-    // flexGrow: 1,
+  colorPrimary: {
+    backgroundImage: theme.palette.primary.mainGradient,
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -49,6 +73,12 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
+// :hover {
+//   color: ${props => (props.demo ? '#e64663' : 'white')};
+//   background-color: ${props => (props.demo ? '#ffffff' : 'transparent')};
+//   text-decoration: ${props => (props.demo ? 'none' : 'underline')};
+//   transition: $animate;
+
 // Header
 export default function Header(props) {
   const classes = useStyles()
@@ -56,18 +86,6 @@ export default function Header(props) {
   // To handle resize
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('sm'))
-
-  const data = useStaticQuery(graphql`
-    query {
-      testWeLogo: file(relativePath: { eq: "tw_logo.png" }) {
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
 
   const [anchorEl, setAnchorEl] = React.useState(null)
 
@@ -79,8 +97,12 @@ export default function Header(props) {
     setAnchorEl(null)
   }
   return (
-    <div className={classes.root}>
-      <AppBar position="static">
+    <AppBar
+      position="sticky"
+      classes={{ colorPrimary: classes.colorPrimary }}
+      color="primary"
+    >
+      <Container maxWidth="lg">
         <Toolbar>
           <IconButton
             style={{ display: matches ? 'block' : 'none' }}
@@ -91,12 +113,14 @@ export default function Header(props) {
           >
             <MenuIcon />
           </IconButton>
-          <Grid container alignItems="center" className={classes.title}>
+          <Grid
+            container
+            alignItems="center"
+            justify="centerss"
+            className={classes.title}
+          >
             <Grid item xs={1}>
-              <Img
-                fluid={data.testWeLogo.childImageSharp.fluid}
-                alt="logo TestWe"
-              />
+              <Image svg={TestweWhite} height="29px" width="141px" />
             </Grid>
             <Grid item xs style={{ display: matches ? 'none' : 'block' }}>
               <Grid container justify="flex-end" className={classes.title}>
@@ -136,6 +160,7 @@ export default function Header(props) {
                 <MyLink demo to="/demo">
                   <NavTypography variant="body1">Demo</NavTypography>
                 </MyLink>
+                <ExitToAppIcon />
                 <MyLink to="https://app.testwe.eu/en/login">
                   <NavTypography variant="body1">Log in</NavTypography>
                 </MyLink>
@@ -143,8 +168,8 @@ export default function Header(props) {
             </Grid>
           </Grid>
         </Toolbar>
-      </AppBar>
-    </div>
+      </Container>
+    </AppBar>
   )
 }
 
