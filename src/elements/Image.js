@@ -4,13 +4,18 @@ import Img from 'gatsby-image'
 
 const Resize = styled.div`
   padding: ${props => props.padding || '0'};
-  width: 100%;
+  width: ${props => props.width || '100%'};
+  height: ${props => props.height || '100%'};
 `
 
 export default function Image(props) {
   return (
     <Resize {...props}>
-      <Img {...props} />
+      {props.svg ? <img src={props.svg} alt={props.alt} /> : <Img {...props} />}
     </Resize>
   )
+}
+
+Image.defaultProps = {
+  alt: '',
 }
