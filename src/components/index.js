@@ -1,4 +1,4 @@
-import Header from './Header'
+import Header from './header'
 import Layout from './Layout'
 import Footer from './Footer'
 import SEO from './seo'
