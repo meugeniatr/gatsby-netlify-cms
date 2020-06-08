@@ -1,14 +1,17 @@
-import { createMuiTheme, colors, responsiveFontSizes } from '@material-ui/core'
+import { createMuiTheme, responsiveFontSizes } from '@material-ui/core'
 
 // A custom theme for this app
 const myTheme = createMuiTheme({
   palette: {
     primary: {
-      main: `#6E357E`,
-      mainGradient: 'linear-gradient(333.26deg, #D82644 2.15%, #6E357E 85.74%)',
+      main: `#ffffff`,
+      // main: `#6E357E`,
+      mainGradient:
+        'linear-gradient(256.5deg, #D82644 -6.61%, #6E357E 112.39%)',
     },
     // secondary: {
-    //   // main: `#E5E5E5`,
+    //   main: `#ffffff`,
+    // },
     //   // main: `#D82644`,
     // },
     // error: {
@@ -18,8 +21,8 @@ const myTheme = createMuiTheme({
     //   default: `#fff`,
     // },
     // text: {
-    //   // primary: `#fff`,
-    //   // secondary: `rgba(255, 255, 255, 0.7)`,
+    //   primary: `#ffffff`,
+    //   secondary: `#ffffff`,
     //   //   disabled: `rgba(255, 255, 255, 0.5)`,
     //   //   hint: `rgba(255, 255, 255, 0.5)`,
     //   //   icon: `rgba(255, 255, 255, 0.5)`,
