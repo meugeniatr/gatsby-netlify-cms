@@ -91,8 +91,7 @@ const PartnersForm = () => {
                     placeholder="First name"
                     value={state.FirsttName}
                     onChange={handleInputChange}
-                    color="primary"
-                    inputProps={{ color: 'white' }}
+                    color="secondary"
                   />
                 </Grid>
                 <Grid item xs={12} md={6}>
@@ -101,6 +100,7 @@ const PartnersForm = () => {
                     required
                     id="FirstName"
                     placeholder="Last name"
+                    color="secondary"
                   />
                 </Grid>
                 <Grid item xs={12}>
@@ -122,6 +122,7 @@ const PartnersForm = () => {
                     placeholder="E-mail"
                     value={state.FirsttName}
                     onChange={handleInputChange}
+                    color="secondary"
                   />
                 </Grid>
                 <Grid item xs={12}>
@@ -132,6 +133,7 @@ const PartnersForm = () => {
                     placeholder="Phone number"
                     value={state.FirsttName}
                     onChange={handleInputChange}
+                    color="secondary"
                   />
                 </Grid>
                 <Grid item xs={12}>
@@ -142,6 +144,7 @@ const PartnersForm = () => {
                     placeholder="Country"
                     value={state.FirsttName}
                     onChange={handleInputChange}
+                    color="secondary"
                   />
                 </Grid>
                 <Grid item xs={12}>
@@ -151,6 +154,7 @@ const PartnersForm = () => {
                     multiline
                     rows={2}
                     rowsMax={4}
+                    color="secondary"
                   />
                 </Grid>
                 <Grid container item xs={12} justify="center">
