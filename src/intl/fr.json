@@ -19,18 +19,14 @@
     "h1": "La solution sécurisée tout-en-un pour les évaluations en ligne",
     "bannerBody": "Découvrez le logiciel leader pour créer des examens en ligne et en face-à-face préféré par équipes éducatives et entreprises axées sur l'excellence.",
     "demo": "Découvrir la démo !",
-    "title_feat1": "Moderniser les stratégies d'évaluation",
-    "body_feat1": "Allégez et simplifiez les processus d'examen grâce à notre système qui vous permet de gérer les tests numérisés et d'externaliser leur correction en quelques clics.",
-    "title_feat2": "Profitez d'un système 100% intuitif",
-    "body_feat2": "Le créateur de test de TestWe se distingue par sa facilité d'utilisation, à la fois pour les enseignants et les étudiants qui peuvent utiliser des instructions claires.",
-    "title_feat3": "Diminue le risque de fraude",
-    "body_feat3": "Découvrez les fonctionnalités uniques de Testwe pour effectuer des examens en face à face et à distance via l'ordinateur avec un haut niveau de fiabilité.",
-    "title_feat4": "Accélère la création de différents types d'examen",
-    "body_feat4": "Merci à la plate-forme pour des sondages en ligne, vous pouvez profiter de la polyvalence des outils numériques pour les examens formative ou sommative.",
-    "title_feat5": "Suivez la courbe d'apprentissage des élèves",
-    "body_feat5": "Faites usage de la puissance de notre outil d'analyse des données sur la performance de vos élèves afin d'optimiser vos stratégies sur le programme.",
-    "title_feat6": "Confidentialité et sécurité",
-    "body_feat6": "Nous adaptons et parfait notre technologie selon les mesures de RGPD pour assurer la confidentialité des données saisies dans nos bases."
+    "title_feat1": "Security",
+    "body_feat1": "Safe personal data, no cheating deal.",
+    "title_feat2": "Remote & face-to-face",
+    "body_feat2": "Modern test solution for modern education.",
+    "title_feat3": "LMS friendly",
+    "body_feat3": "Integrate  your technology seamlessly.",
+    "title_feat4": "Here for you!",
+    "body_feat4": "Our support team is available 24 hs."
   },
   "terms-conditions": {
     "title": "Mentions légales",
@@ -44,5 +40,35 @@
     "applicable-body": "Le Site et les présentes Mentions Légales sont soumis au droit français. Elles sont rédigées en français. En cas de litige relatif à l'interprétation ou à l'exécution des présentes Mentions Légales, les tribunaux de Paris sont seuls compétents, sauf disposition légale impérative contraire.",
     "modifications": "Modifications",
     "modifications-body": "TestWe se réserve le droit de modifier et de mettre à jour, sans préavis, les présentes Mentions Légales et tous les éléments, produits ou services présentés sur le Site. L'ensemble de ces modifications s'impose aux internautes qui doivent consulter les présentes Mentions Légales liées au Site."
+  },
+  "support": {
+    "privacy": {
+      "personal-data": "DONNÉES PERSONELLES",
+      "subtitle": "La protection de la vie privée est un sujet extrêmement important, et nous tenons à vous assurer que, chez TestWe, nous la prenons très au sérieux. TestWe est un prestataire de services qui met sa solution d’examens en ligne à la disposition des établissements d’enseignement et centres de formation. Voici comment TestWe protège votre vie privée et vos données personnelles en ce qui concerne votre utilisation de nos services",
+      "commerce-tab": "Absence de commercialisation des données",
+      "commerce-body": "Que vous soyez un élève, un étudiant, un candidat, un professeur, un correcteur, un personnel administratif, un établissement d’enseignement ou un centre de formation, nous ne vendons pas vos données personnelles qui reste votre propriété. TestWe s’engage contractuellement envers ses partenaires à ne pas faire un usage commercial de vos données",
+      "services-tab": "Services TestWe",
+      "services-body": "TestWe connait uniquement les données des utilisateurs nécessaires à la prestation des services TestWe, à savoir la passation d’examens en salle de classe ou à distance mais également les cas d’assistance technique et opérationnelle. Par exemple, nous connaissons des informations telles que le prénom, le nom, l’adresse email, le numéro d’élève/étudiant/candidat, l’établissement de rattachement, le programme de rattachement, les remontés d’images par webcam, les détails du système d’exploitation et de l’appareil utilisés, afin d’offrir la meilleure expérience possible.",
+      "cgu-tab": "CGU TestWe",
+      "cgu-body": "Nos CGU (Conditions Générales d’Utilisation) sont consultables depuis le logiciel TestWe. Vous devez en prendre connaissance et les accepter avant toute utilisation du logiciel d’examen TestWe",
+      "admin-tab": "Droits administrateurs",
+      "admin-body": "???",
+      "interactions-tab": "Interaction avec les autres logiciels",
+      "interactions-body": "Le logiciel TestWe n’interagit pas avec les autres logiciels de votre ordinateur. En effet aucun échange d’information ou de donnée est opéré entre TestWe et un logiciel tiers.",
+      "control-tab": "Absence de prise de contrôle",
+      "control-body": "Le logiciel TestWe ne prend en aucun cas le contrôle de votre ordinateur permettant de contrôler ou d’opérer toute autre opération ou interaction avec un autre logiciel ou application.",
+      "server-tab": "Serveurs TestWe",
+      "server-body": "TestWe utilise les services d’AWS en tant que fournisseur de serveurs et d’hébergeur. TestWe utilise les serveurs AWS localisés en Ile-de-France (Paris, France). D’autres grands acteurs français et mondiaux ont fait le même choix.  Les Conditions de Service AWS sont consultables au travers du lien suivant : https://d1.awsstatic.com/legal/awsserviceterms/AWS%20Service%20Terms%20- %20French%20Translation.pdf",
+      "aws-tab": "Engagements AWS",
+      "aws-body": "Toutes les régions AWS sont conçues, construites et régulièrement auditées afin de répondre aux normes de conformité les plus rigoureuses, et de fournir un niveau de sécurité élevé à tous leurs clients. La Région AWS Europe (Paris) répond aux normes ISO 27001, ISO 27017, ISO 27018, SOC 1 (anciennement SAS 70), SOC 2 et SOC 3 Security & Availability, PCI DSS Niveau 1, Hébergeur de Données de Sante (HDS) et bien d’autres.",
+      "access-tab": "Droit d’accès et de rectification",
+      "access-body": "Nous nous engageons à protéger la confidentialité et la sécurité de vos données personnelles. Si vous avez des questions, ou si vous souhaitez rectifier, compléter, mettre à jour ou supprimer vos données (en accord avec les mesures prises par votre institution de rattachement), veuillez contacter l’équipe chargée de la confidentialité à l’adresse privacy@testwe.eu."
+    },
+    "teachers": {
+      "support": "PROFS ET ADMINISTRATION"
+    },
+    "students": {
+      "support": "ÉTUDIANTS"
+    }
   }
 }
