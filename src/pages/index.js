@@ -6,11 +6,12 @@ import { Layout, SEO } from '../components'
 import {
   BannerFirst,
   BannerSecond,
-  Applications,
-  Features,
+  Clients,
+  Timeline,
+  BlogNews,
 } from '../components/Home'
 
-import styled from 'styled-components'
+// import styled from 'styled-components'
 
 // const Header = styled.div`
 //   position: relative;
@@ -73,7 +74,10 @@ const IndexPage = () => {
       </Header> */}
       <BannerFirst />
       <BannerSecond />
-      <Applications />
+      <Clients />
+      {/* <Applications /> */}
+      <Timeline />
+      <BlogNews />
     </Layout>
   )
 }
