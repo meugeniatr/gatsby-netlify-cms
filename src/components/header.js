@@ -1,12 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'gatsby-plugin-intl'
 
 import MenuIcon from '@material-ui/icons/Menu'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
 
 import PropTypes from 'prop-types'
-import Img from 'gatsby-image'
-import { Link } from 'gatsby-plugin-intl'
 import {
   Typography,
   MenuItem,
@@ -19,45 +18,11 @@ import {
   Container,
   Grid,
 } from '@material-ui/core'
-import { Image } from '../elements'
+import { Image, UnderlinedLink } from '../elements'
 import TestweWhite from '../images/Logos/TestweWhite.svg'
-import { LoginIcon } from '../elements/SVGS'
 import ExitToAppIcon from '@material-ui/icons/ExitToApp'
+import { LoginIcon } from '../elements/SVGS'
 
-const MyLink = styled(Link)`
-  color: white;
-  text-decoration: none;
-  margin-right: 2rem;
-  border: 2px solid ${props => (props.demo ? '#ffffff' : 'transparent')};
-  border-radius: 10px;
-  padding: ${props => (props.demo ? '3px' : '0px')};
-  cursor: pointer;
-  position: relative;
-
-  ::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: #ffffff;
-    visibility: hidden;
-    transform: scaleX(0);
-    transition: all 0.3s ease-in-out 0s;
-  }
-
-  :hover::before {
-    ${props =>
-      !props.demo
-        ? 'visibility: visible; transform: scaleX(1);'
-        : 'background-color:"#ffffff"; color:"#e64663"; '};
-  }
-  :hover {
-    color: ${props => (props.demo ? '#e64663' : 'white')};
-    background-color: ${props => (props.demo ? '#ffffff' : 'transparent')};
-  }
-`
 const NavTypography = styled(Typography)`
   font-weight: 500;
 `
@@ -73,13 +38,45 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-// :hover {
-//   color: ${props => (props.demo ? '#e64663' : 'white')};
-//   background-color: ${props => (props.demo ? '#ffffff' : 'transparent')};
-//   text-decoration: ${props => (props.demo ? 'none' : 'underline')};
-//   transition: $animate;
+const Styleda = styled.a`
+color: white;
+text-decoration: none;
+margin-right: 2rem;
+border: 0px;
+border-radius: 10px;
+padding: 0px;
+cursor: pointer;
+position: relative;
 
-// Header
+::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #ffffff;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out 0s;
+}
+
+:hover::before {
+  visibility: visible; 
+  transform: scaleX(1);
+}
+:hover {
+  color: white;
+  transparent;
+}
+`
+
+const StyledLogin = styled(LoginIcon)`
+  color: white;
+  text-size: 12px;
+  display: inline;
+`
+
 export default function Header(props) {
   const classes = useStyles()
 
@@ -120,17 +117,19 @@ export default function Header(props) {
             className={classes.title}
           >
             <Grid item xs={1}>
-              <Image svg={TestweWhite} height="29px" width="141px" />
+              <Link to="">
+                <Image svg={TestweWhite} height="29px" width="141px" />
+              </Link>
             </Grid>
             <Grid item xs style={{ display: matches ? 'none' : 'block' }}>
               <Grid container justify="flex-end" className={classes.title}>
-                <MyLink to="#">
+                <UnderlinedLink to="/product">
                   <NavTypography variant="body1">Software</NavTypography>
-                </MyLink>
-                <MyLink to="#">
+                </UnderlinedLink>
+                <UnderlinedLink to="/features">
                   <NavTypography variant="body1">Why?</NavTypography>
-                </MyLink>
-                <MyLink
+                </UnderlinedLink>
+                <UnderlinedLink
                   activeStyle={{ color: 'white' }}
                   to="#"
                   aria-controls="simple-menu"
@@ -138,7 +137,7 @@ export default function Header(props) {
                   onClick={handleClick}
                 >
                   <NavTypography variant="body1">For who?</NavTypography>
-                </MyLink>
+                </UnderlinedLink>
                 <Menu
                   style={{ marginTop: '3%' }}
                   id="simple-menu"
@@ -147,23 +146,38 @@ export default function Header(props) {
                   open={Boolean(anchorEl)}
                   onClose={handleClose}
                 >
-                  <MenuItem onClick={handleClose}>Profile</MenuItem>
-                  <MenuItem onClick={handleClose}>My account</MenuItem>
-                  <MenuItem onClick={handleClose}>Logout</MenuItem>
+                  <MenuItem onClick={handleClose}>
+                    <UnderlinedLink header to="/high-school">
+                      High School
+                    </UnderlinedLink>
+                  </MenuItem>
+                  <MenuItem onClick={handleClose}>
+                    <Link to="/university">University</Link>
+                  </MenuItem>
+                  <MenuItem onClick={handleClose}>
+                    <Link to="/university">Training Center</Link>
+                  </MenuItem>
+                  <MenuItem onClick={handleClose}>
+                    <Link to="/university">Enterprise</Link>
+                  </MenuItem>
                 </Menu>
-                <MyLink to="#">
+                <UnderlinedLink to="#">
                   <NavTypography variant="body1">Blog</NavTypography>
-                </MyLink>
-                <MyLink to="#">
+                </UnderlinedLink>
+                <UnderlinedLink to="/support">
                   <NavTypography variant="body1">Support</NavTypography>
-                </MyLink>
-                <MyLink demo to="/demo">
+                </UnderlinedLink>
+                <UnderlinedLink demo to="/demo">
                   <NavTypography variant="body1">Demo</NavTypography>
-                </MyLink>
-                <ExitToAppIcon />
-                <MyLink to="https://app.testwe.eu/en/login">
+                </UnderlinedLink>
+                <LoginIcon fontSize="small" color="primary" />
+                <Styleda
+                  href="https://app.testwe.eu/fr/login"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <NavTypography variant="body1">Log in</NavTypography>
-                </MyLink>
+                </Styleda>
               </Grid>
             </Grid>
           </Grid>
