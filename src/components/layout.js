@@ -20,13 +20,13 @@ export default function Layout(props) {
   `)
 
   return (
-    <div>
+    <div style={{ backgroundColor: '#ffffff' }}>
       <Helmet>
         <link rel="icon" href={favicon} />
       </Helmet>
       <Header siteTitle={data.site.siteMetadata.title} />
       <Container maxWidth="lg">
-        <main style={{ margin: '70px 0px 80px' }}>{props.children}</main>
+        <main style={{ margin: '0px 30px 0px' }}>{props.children}</main>
       </Container>
       <Footer />
     </div>
