@@ -22,6 +22,7 @@ const BannerFirst = () => {
     }
   `)
   return (
+    // <Section backgroundColor="inherit">
     <Grid container spacing={3} alignItems="center" justify="right">
       <Grid container item xs={12} md={6} alignItems="right">
         <Typography variant="h1">
@@ -42,6 +43,7 @@ const BannerFirst = () => {
         />
       </Grid>
     </Grid>
+    // </Section>
   )
 }
 
