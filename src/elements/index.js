@@ -4,5 +4,6 @@ import WhiteLink from './WhiteLink'
 import Image from './Image'
 import Section from './Section'
 import Video from './Video'
+import UnderlinedLink from './UnderlinedLink'
 
-export { PinkLink, PinkPaper, Image, WhiteLink, Section, Video }
+export { PinkLink, PinkPaper, Image, WhiteLink, Section, Video, UnderlinedLink }
