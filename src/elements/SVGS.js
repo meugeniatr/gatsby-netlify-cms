@@ -214,16 +214,41 @@ const LoginIcon = props => (
     <title>Log-in</title>
     <g id="Calque_2" data-name="Calque 2">
       <g id="Calque_1-2" data-name="Calque 1">
-        <polyline class="cls-1" points="72 5 218 5 218 260 72 260" />
-        <line class="cls-1" x1="5" y1="131.79" x2="92.05" y2="131.79" />
-        <polygon
-          class="cls-2"
-          points="77.19 153.58 158.5 131.79 77.19 110 77.19 153.58"
+        <g id="Calque_2-2" data-name="Calque 2">
+          <g id="Calque_1-2-2" data-name="Calque 1-2">
+            <path
+              class="cls-1"
+              d="M218,265H72a5,5,0,0,1,0-10H213V10H72A5,5,0,0,1,72,0H218a5,5,0,0,1,5,5V260A5,5,0,0,1,218,265Z"
+            />
+            <path
+              class="cls-1"
+              d="M158.5,131.79,77.19,110v16.79H5a5,5,0,0,0,0,10H77.19v16.79Z"
+            />
+          </g>
+        </g>
+      </g>
+    </g>
+  </SvgIcon>
+)
+
+const PinkCheckIcon = props => (
+  <SvgIcon viewBox="0 0 166.3 150" {...props}>
+    <title>Pink Check</title>
+    <g id="Calque_2" data-name="Calque 2">
+      <g id="Calque_1-2" data-name="Calque 1">
+        <path
+          class="cls-1"
+          d="M158.3,8V142H8V8H158.3m3-8H5A5,5,0,0,0,0,5V145a5,5,0,0,0,5,5H161.34a5,5,0,0,0,5-5V5a5,5,0,0,0-5-5Z"
+        />
+        <path
+          class="cls-1"
+          d="M66.46,120.44a6.78,6.78,0,0,1-4.82-2L19.52,76.33a6.82,6.82,0,1,1,9.64-9.64L66.46,104,137.15,33.3a6.81,6.81,0,0,1,9.63,9.64L71.27,118.45A6.78,6.78,0,0,1,66.46,120.44Z"
         />
       </g>
     </g>
   </SvgIcon>
 )
+
 export {
   PrivacyIcon,
   TeachersIcon,
@@ -236,4 +261,5 @@ export {
   YoutubeIcon,
   LanguageIcon,
   LoginIcon,
+  PinkCheckIcon,
 }
