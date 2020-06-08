@@ -23,6 +23,7 @@ const BannerSecond = () => {
     }
   `)
   return (
+    // <Section backgroundColor="inherit">
     <Grid container spacing={3} alignItems="center">
       <Grid item xs={12} md={6}>
         <Image
@@ -42,7 +43,9 @@ const BannerSecond = () => {
           <Typography>{intl.formatMessage({ id: 'home.demo' })}</Typography>
         </PinkLink>
       </Grid>
+      <Features />
     </Grid>
+    // </Section>
   )
 }
 
