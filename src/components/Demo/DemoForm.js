@@ -1,5 +1,11 @@
 import React, { useReducer, useState } from 'react'
-import { TextField, Grid, Typography, Checkbox } from '@material-ui/core'
+import {
+  TextField,
+  Grid,
+  Typography,
+  ThemeProvider,
+  createMuiTheme,
+} from '@material-ui/core'
 import { WhiteLink } from '../../elements'
 import styled from 'styled-components'
 
@@ -12,6 +18,18 @@ overflow: 'hidden',
 borderRadius: 4,
 backgroundColor: '#fcfcfb'
 `
+const darkTheme = createMuiTheme({
+  palette: {
+    type: 'dark',
+    primary: {
+      main: `#000000`,
+      contrastText: `#ffffff`,
+    },
+    secondary: {
+      main: `#ffffff`,
+    },
+  },
+})
 
 const initialState = {
   firstName: '',
@@ -48,92 +66,103 @@ const DemoForm = () => {
   }
 
   return (
-    <form noValidate autoComplete="off">
-      <Grid
-        container
-        spacing={3}
-        alignItems="flex-end"
-        justify="center"
-        style={{ padding: 40 }}
-      >
-        <Typography variant="h4" style={{ paddingBottom: 40 }}>
-          Check how TestWe works in a 30' meeting
-        </Typography>
-        <Grid item xs={12} md={6}>
-          <TextField
-            fullWidth={true}
-            required
-            id="FirstName"
-            placeholder="First name"
-            value={state.FirsttName}
-            onChange={handleInputChange}
-            color="primary"
-            inputProps={{ color: 'white' }}
-          />
+    <ThemeProvider theme={darkTheme}>
+      <form noValidate autoComplete="off">
+        <Grid
+          container
+          spacing={3}
+          alignItems="flex-end"
+          justify="center"
+          style={{ padding: 40 }}
+        >
+          <Typography
+            variant="h4"
+            style={{ paddingBottom: 40 }}
+            color="textPrimary"
+          >
+            Check how TestWe works in a 30' meeting
+          </Typography>
+          <Grid item xs={12} md={6}>
+            <TextField
+              fullWidth={true}
+              required
+              id="FirstName"
+              placeholder="First name"
+              value={state.FirsttName}
+              onChange={handleInputChange}
+              color="secondary"
+            />
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <TextField
+              fullWidth={true}
+              required
+              id="FirstName"
+              placeholder="Last name"
+              color="secondary"
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <TextField
+              fullWidth={true}
+              required
+              id="FirstName"
+              placeholder="Job Title"
+              value={state.FirsttName}
+              onChange={handleInputChange}
+              color="secondary"
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <TextField
+              fullWidth={true}
+              required
+              id="FirstName"
+              placeholder="E-mail"
+              value={state.FirsttName}
+              onChange={handleInputChange}
+              color="secondary"
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <TextField
+              fullWidth={true}
+              required
+              id="FirstName"
+              placeholder="Phone number"
+              value={state.FirsttName}
+              onChange={handleInputChange}
+              color="secondary"
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <TextField
+              fullWidth={true}
+              required
+              id="FirstName"
+              placeholder="Country"
+              value={state.FirsttName}
+              onChange={handleInputChange}
+              color="secondary"
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <WhiteTextField
+              fullWidth={true}
+              placeholder="MultiLine with rows: 2 and rowsMax: 4"
+              multiline
+              rows={2}
+              rowsMax={4}
+              variant="outlined"
+              color="secondary"
+            />
+          </Grid>
+          <Grid container item xs={12} justify="center">
+            <WhiteLink onClick={handleSubmit}>Get my appointment! </WhiteLink>
+          </Grid>
         </Grid>
-        <Grid item xs={12} md={6}>
-          <TextField
-            fullWidth={true}
-            required
-            id="FirstName"
-            placeholder="Last name"
-          />
-        </Grid>
-        <Grid item xs={12}>
-          <TextField
-            fullWidth={true}
-            required
-            id="FirstName"
-            placeholder="Job Title"
-            value={state.FirsttName}
-            onChange={handleInputChange}
-            color="secondary"
-          />
-        </Grid>
-        <Grid item xs={12}>
-          <TextField
-            fullWidth={true}
-            required
-            id="FirstName"
-            placeholder="E-mail"
-            value={state.FirsttName}
-            onChange={handleInputChange}
-          />
-        </Grid>
-        <Grid item xs={12}>
-          <TextField
-            fullWidth={true}
-            required
-            id="FirstName"
-            placeholder="Phone number"
-            value={state.FirsttName}
-            onChange={handleInputChange}
-          />
-        </Grid>
-        <Grid item xs={12}>
-          <TextField
-            fullWidth={true}
-            required
-            id="FirstName"
-            placeholder="Country"
-            value={state.FirsttName}
-            onChange={handleInputChange}
-          />
-        </Grid>
-        <Grid item xs={12}>
-          <WhiteTextField
-            fullWidth={true}
-            placeholder="MultiLine with rows: 2 and rowsMax: 4"
-            multiline
-            rows={2}
-            rowsMax={4}
-          />
-        </Grid>
-        <Grid container item xs={12} justify="center">
-          <WhiteLink onClick={handleSubmit}>Get my appointment! </WhiteLink>
-        </Grid>
-      </Grid>
-    </form>
+      </form>
+    </ThemeProvider>
   )
 }
 export default DemoForm
