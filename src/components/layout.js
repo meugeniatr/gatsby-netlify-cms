@@ -26,7 +26,7 @@ export default function Layout(props) {
       </Helmet>
       <Header siteTitle={data.site.siteMetadata.title} />
       <Container maxWidth="lg">
-        <main style={{ margin: '0px 30px 0px' }}>{props.children}</main>
+        <main style={{ margin: '60px 30px 0px' }}>{props.children}</main>
       </Container>
       <Footer />
     </div>
