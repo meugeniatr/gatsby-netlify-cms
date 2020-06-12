@@ -20,7 +20,6 @@ import {
 } from '@material-ui/core'
 import { Image, UnderlinedLink } from '../elements'
 import TestweWhite from '../images/Logos/TestweWhite.svg'
-import ExitToAppIcon from '@material-ui/icons/ExitToApp'
 import { LoginIcon } from '../elements/SVGS'
 
 const NavTypography = styled(Typography)`
@@ -69,12 +68,6 @@ position: relative;
   color: white;
   transparent;
 }
-`
-
-const StyledLogin = styled(LoginIcon)`
-  color: white;
-  text-size: 12px;
-  display: inline;
 `
 
 export default function Header(props) {
