@@ -1,6 +1,5 @@
 import React from 'react'
 
-import { useStaticQuery, graphql } from 'gatsby'
 import { useIntl } from 'gatsby-plugin-intl'
 import { Layout, SEO } from '../components'
 import {
@@ -39,17 +38,6 @@ import {
 
 const IndexPage = () => {
   const intl = useIntl()
-  const data = useStaticQuery(graphql`
-    query {
-      defaultimage: file(relativePath: { eq: "defaultimage.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 800) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
   return (
     <Layout>
       <SEO title={intl.formatMessage({ id: 'title' })} />
