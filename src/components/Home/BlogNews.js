@@ -1,5 +1,5 @@
 import React from 'react'
-import { Grid, Typography, Paper, Link } from '@material-ui/core'
+import { Grid, Typography, Paper, Link, Box } from '@material-ui/core'
 import Newsletter from './Newsletter'
 import { useStaticQuery, graphql } from 'gatsby'
 import { PinkLink } from '../../elements'
@@ -43,13 +43,12 @@ const BlogNews = () => {
           Learn more about TestWe
         </Typography>
         <PinkLink>Blog</PinkLink>
-        <Grid container spacing={2}>
-          {/* <Typography variant="h4"> */}
-          {data.allWordpressPost.edges.map(value => {
-            console.log(value)
-            return (
-              <Grid item xs={12} md={4} spacing={3}>
-                <Paper>
+        <Box mt={'2em'}>
+          <Grid container spacing={3}>
+            {data.allWordpressPost.edges.map(value => {
+              console.log(value)
+              return (
+                <Grid item xs={12} md={4}>
                   <div>
                     <Grid item xs={12}>
                       <img
@@ -57,9 +56,15 @@ const BlogNews = () => {
                         width="100%"
                       />
                     </Grid>
-                    <Typography variant="h4">{value.node.title}</Typography>
+                    <Typography variant="h4">
+                      <div
+                        dangerouslySetInnerHTML={{ __html: value.node.title }}
+                      />
+                    </Typography>
                     <Typography variant="body1">
-                      {value.node.excerpt}
+                      <div
+                        dangerouslySetInnerHTML={{ __html: value.node.excerpt }}
+                      />
                     </Typography>
                     <Link
                       component="button"
@@ -72,20 +77,14 @@ const BlogNews = () => {
                       Read more
                     </Link>
                   </div>
-                </Paper>
-              </Grid>
-            )
-          })}
-          {/* {result.data.wordpressPost.title} */}
-          {/* </Typography> */}
-          {/* <div dangerouslySetInnerHTML={{ __html: node.excerpt }} /> */}
-          <Grid item xs={12} md={4}>
-            <Paper>hola</Paper>
+                </Grid>
+              )
+            })}
+            {/* {result.data.wordpressPost.title} */}
+            {/* </Typography> */}
+            {/* <div dangerouslySetInnerHTML={{ __html: node.excerpt }} /> */}
           </Grid>
-          <Grid item xs={12} md={4}>
-            <Paper>hola</Paper>
-          </Grid>
-        </Grid>
+        </Box>
       </Grid>
       <Grid item xs={12} md={4}>
         <Newsletter />
