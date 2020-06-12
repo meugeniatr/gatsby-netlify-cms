@@ -89,7 +89,6 @@ const Applications = () => {
               direction="column"
             >
               <Image
-                padding="0 30%"
                 fluid={data.defaultimage.childImageSharp.fluid}
                 alt="logo TestWe"
               />
