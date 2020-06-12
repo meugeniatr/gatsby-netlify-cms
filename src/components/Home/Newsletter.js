@@ -1,9 +1,7 @@
 import React from 'react'
 import { Grid, Typography, Paper, TextField, Button } from '@material-ui/core'
-import { Image } from '../../elements'
 import theme from '../../gatsby-theme-material-ui-top-layout/theme'
 import styled from 'styled-components'
-import Plane from '../../images/Home/Plane.svg'
 
 const DarkButton = styled(Button)`
   padding: 5px 10px;

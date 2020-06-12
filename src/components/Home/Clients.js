@@ -1,6 +1,4 @@
 import React from 'react'
-import { makeStyles } from '@material-ui/core/styles'
-import Paper from '@material-ui/core/Paper'
 import Collapse from '@material-ui/core/Collapse'
 
 import { PinkPaper, Image } from '../../elements'
@@ -13,6 +11,7 @@ import {
   Typography,
   Grid,
   Button,
+  IconButton,
   createMuiTheme,
   ThemeProvider,
 } from '@material-ui/core'
@@ -63,48 +62,7 @@ const darkTheme = createMuiTheme({
   },
 })
 
-const useStyles = makeStyles(theme => ({
-  root: {
-    alignItems: 'center',
-    verticalAlign: 'middle',
-    justify: 'center',
-    height: 106,
-    width: 106,
-    borderRadius: '50%',
-    '&$focused': {
-      border: 'solid 4px',
-      borderColor: '#ffffff',
-      borderRadius: '50%',
-      padding: '8px',
-    },
-    '&$hover': {
-      border: 'solid 4px',
-      borderColor: '#ffffff',
-      borderRadius: '50%',
-      padding: '8px',
-    },
-  },
-  focused: {},
-  padding: {},
-  Button: {
-    boxShadow: '-8px 8px 4px rgba(0, 0, 0, 0.25)',
-    borderRadius: '50%',
-    height: 110,
-    width: 110,
-    '&focusVisible': {
-      border: 'solid 4px',
-      borderColor: '#ffffff',
-      borderRadius: '50%',
-      padding: '8px',
-    },
-  },
-  container: {
-    display: 'flex',
-  },
-}))
-
 const Clients = () => {
-  const classes = useStyles()
   const [highchecked, setHighChecked] = React.useState(false)
   const [universitychecked, setUniversity] = React.useState(false)
   const [enterprisechecked, setEnterprise] = React.useState(false)
@@ -140,7 +98,13 @@ const Clients = () => {
   return (
     <ThemeProvider theme={darkTheme}>
       <PinkPaper style={{ padding: '60px' }}>
-        <Grid container alignItems="center" justify="center" direction="row">
+        <Grid
+          container
+          alignItems="center"
+          justify="space-evenly"
+          direction="row"
+          xs={12}
+        >
           <Grid item xs={12}>
             <Typography variant="h2">
               A perfect fit for every assessment
@@ -153,14 +117,13 @@ const Clients = () => {
             </Typography>
           </Grid>
           <Grid item xs={12} md={3}>
-            <CircleButton
+            <IconButton
               name="highschool"
               checked={highchecked}
               onClick={handleChangeHigh}
-              classes={classes}
             >
               <Image svg={HighSchool} width="106px" height="106" />
-            </CircleButton>
+            </IconButton>
           </Grid>
           <Grid item xs={12} md={3}>
             <CircleButton

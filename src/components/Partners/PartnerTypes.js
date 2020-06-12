@@ -1,7 +1,5 @@
 import React from 'react'
 
-import { useIntl } from 'gatsby-plugin-intl'
-
 import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
 import PartnersTech from '../../images/Partners/PartnersTech.svg'
@@ -44,7 +42,6 @@ const Type = props => {
 }
 
 const PartnerTypes = () => {
-  const intl = useIntl()
   return (
     <Grid container spacing={1} alignItems="flex-start">
       <Type
